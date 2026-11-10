@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Donna Empoderada Boutique — moda feminina para mulheres que expressam sua personalidade com confiança." />
+  <title>Donna Empoderada Boutique | Vista sua essência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#21191c;--wine:#713747;--rose:#c58b91;--blush:#f5e9e8;--cream:#fbf8f4;--muted:#766b6d;--white:#fff;--line:#eadfdd}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    .announcement{background:var(--wine);color:white;text-align:center;padding:9px 16px;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase}
+    header{position:sticky;top:0;z-index:20;background:rgba(251,248,244,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1180px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:'Playfair Display',serif;font-size:1.35rem;line-height:1.05;font-weight:700;letter-spacing:.02em}
+    .brand span{display:block;font:600 .58rem 'DM Sans',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:var(--wine);margin-top:6px}
+    .nav-links{display:flex;align-items:center;gap:30px;font-size:.88rem;color:#51464a}
+    .nav-links a:hover{color:var(--wine)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--wine);color:white;border:1px solid var(--wine);padding:12px 22px;border-radius:2px;font-weight:600;font-size:.86rem;transition:.2s}
+    .nav-cta:hover,.btn:hover{background:#542634;border-color:#542634;transform:translateY(-2px)}
+    .menu-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--ink)}
+    .hero{max-width:1320px;margin:auto;min-height:610px;padding:70px 6%;display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:50px;overflow:hidden}
+    .eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.24em;color:var(--wine);font-weight:700;margin-bottom:18px}
+    h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.12}
+    h1{font-size:clamp(3rem,5.5vw,5.6rem);max-width:570px;letter-spacing:-.035em}
+    h1 em{color:var(--wine);font-style:italic}
+    .hero-copy{max-width:460px;color:var(--muted);margin:23px 0 30px;font-size:1.02rem}
+    .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+    .text-link{font-size:.87rem;font-weight:700;border-bottom:1px solid var(--rose);padding-bottom:4px}
+    .hero-art{position:relative;min-height:490px;background:linear-gradient(145deg,#e9d3d0,#b77d82 60%,#784454);overflow:hidden}
+    .hero-art:before{content:'';position:absolute;inset:8% 12% 0;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(44,17,27,.22)),url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1100&q=85') center 35%/cover;filter:saturate(.78)}
+    .hero-art:after{content:'DONNA\A EMPODERADA';white-space:pre;position:absolute;right:22px;bottom:20px;color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem;letter-spacing:.18em;text-align:right;text-shadow:0 2px 12px #38232a}
+    .hero-note{position:absolute;left:0;bottom:34px;background:var(--cream);padding:17px 22px;max-width:210px;box-shadow:0 12px 35px #4b27301a;z-index:2}
+    .hero-note strong{display:block;font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--wine)}
+    .hero-note small{color:var(--muted);font-size:.72rem}
+    .benefits{background:var(--blush);padding:22px 24px}
+    .benefit-inner{max-width:1080px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+    .benefit{font-size:.83rem;color:#5e4b50}.benefit b{display:block;color:var(--wine);font-size:.9rem;margin-bottom:3px}
+    section.content{padding:88px 24px}
+    .section-head{text-align:center;max-width:620px;margin:0 auto 42px}
+    .section-head h2{font-size:clamp(2.2rem,4vw,3.4rem);margin-bottom:13px}
+    .section-head p{color:var(--muted)}
+    .categories{max-width:1120px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .category{position:relative;min-height:340px;overflow:hidden;background:#e5d2ce}
+    .category img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .5s;filter:saturate(.78)}
+    .category:hover img{transform:scale(1.05)}
+    .category:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(28,16,20,.68))}
+    .category-label{position:absolute;z-index:1;bottom:22px;left:24px;color:white}
+    .category-label h3{font-size:1.8rem;margin-bottom:5px}.category-label span{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+    .products{background:#f4eeeb}
+    .product-grid{max-width:1120px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .product-card{background:var(--cream);padding-bottom:18px}
+    .product-image{height:300px;position:relative;overflow:hidden;background:#e9dcd8}
+    .product-image img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .product-card:hover img{transform:scale(1.04)}
+    .tag{position:absolute;top:13px;left:13px;background:var(--cream);color:var(--wine);font-size:.65rem;font-weight:700;letter-spacing:.1em;padding:6px 9px;text-transform:uppercase}
+    .product-info{padding:16px 16px 0}.product-info h3{font:600 1rem 'DM Sans',sans-serif;margin-bottom:5px}.product-info p{font-size:.83rem;color:var(--muted)}
+    .product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:13px}.price{font-weight:700;color:var(--wine)}
+    .add-btn{border:1px solid var(--line);background:transparent;color:var(--wine);padding:7px 10px;font-size:.75rem;font-weight:700}.add-btn:hover{background:var(--wine);color:white}
+    .about{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+    .about-photo{height:450px;background:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85') center/cover}
+    .about h2{font-size:clamp(2.4rem,4vw,3.6rem);margin-bottom:20px}.about p{color:var(--muted);margin-bottom:16px}
+    .quote{background:var(--wine);color:white;text-align:center;padding:72px 24px}
+    .quote blockquote{font:italic clamp(1.7rem,3.5vw,2.7rem) 'Playfair Display',serif;max-width:800px;margin:0 auto 14px}.quote span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#f0d8d9}
+    .contact{text-align:center}.contact .section-head{margin-bottom:25px}.contact-details{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:25px;color:var(--muted);font-size:.88rem}
+    footer{background:#21191c;color:#f8eeec;padding:38px 24px}.footer-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.footer-brand{font:600 1.2rem 'Playfair Display',serif}.footer-brand small{display:block;font: .65rem 'DM Sans',sans-serif;letter-spacing:.2em;color:#d5aeb1;margin-top:5px}.footer-links{display:flex;gap:20px;font-size:.8rem;color:#e0cfd0}.copyright{width:100%;border-top:1px solid #ffffff25;padding-top:18px;margin-top:10px;font-size:.72rem;color:#bbaeb0;text-align:center}
+    .cart-toast{position:fixed;bottom:20px;right:20px;background:var(--ink);color:white;padding:13px 18px;font-size:.85rem;box-shadow:0 8px 30px #0002;opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s;z-index:50}.cart-toast.show{opacity:1;transform:translateY(0)}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:55px;gap:35px}.hero-art{min-height:430px}.product-grid{grid-template-columns:repeat(2,1fr)}.about{gap:35px}.nav-links{gap:17px}}
+    @media(max-width:640px){.announcement{font-size:.65rem}.nav{padding:14px 18px}.menu-toggle{display:block}.nav-cta{display:none}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:20px 24px 25px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.hero{padding:48px 22px 55px;min-height:auto}.hero-art{min-height:350px}.hero-note{bottom:18px}.benefit-inner{grid-template-columns:1fr;gap:14px}.benefit:not(:last-child){padding-bottom:12px;border-bottom:1px solid #dfc9c8}.content{padding:65px 18px!important}.categories{grid-template-columns:1fr;gap:15px}.category{min-height:390px}.product-grid{gap:12px}.product-image{height:230px}.product-info{padding:13px 11px 0}.about{grid-template-columns:1fr;gap:28px}.about-photo{height:340px;order:2}.quote{padding:58px 22px}.footer-inner{justify-content:center;text-align:center}.footer-links{justify-content:center;flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <div class="announcement">Sua beleza, sua força, seu estilo ✦</div>
+  <header>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio">DONNA EMPODERADA<span>Boutique</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a><a href="#colecoes">Coleções</a><a href="#novidades">Destaques</a><a href="#sobre">Nossa essência</a><a href="#contato">Contato</a>
+      </div>
+      <a class="nav-cta" href="#contato">Fale com a loja</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <div class="eyebrow">Moda feminina · Atitude · Elegância</div>
+        <h1>Vista sua essência. <em>Revele sua força.</em></h1>
+        <p class="hero-copy">Peças escolhidas para acompanhar mulheres reais, que têm personalidade, sonhos e não abrem mão de se sentir lindas em cada momento.</p>
+        <div class="hero-actions"><a class="btn" href="#novidades">Descubra a coleção</a><a class="text-link" href="#sobre">Conheça a Donna</a></div>
+      </div>
+      <div class="hero-art"><div class="hero-note"><strong>Você é sua melhor versão.</strong><small>Estilo para expressar quem você é.</small></div></div>
+    </section>
+
+    <div class="benefits"><div class="benefit-inner">
+      <div class="benefit"><b>✦ Escolhas especiais</b>Peças selecionadas com carinho</div>
+      <div class="benefit"><b>♡ Vista-se de confiança</b>Moda que valoriza sua personalidade</div>
+      <div class="benefit"><b>✧ Atendimento acolhedor</b>Estamos aqui para ajudar você</div>
+    </div></div>
+
+    <section class="content" id="colecoes">
+      <div class="section-head"><div class="eyebrow">Encontre seu estilo</div><h2>Uma coleção para cada versão sua</h2><p>Do look casual ao visual marcante: escolha o que faz você se sentir ainda mais poderosa.</p></div>
+      <div class="categories">
+        <a class="category" href="#novidades"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=850&q=85" alt="Moda casual feminina"><div class="category-label"><h3>Casual chic</h3><span>Leveza para todos os dias</span></div></a>
+        <a class="category" href="#novidades"><img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=850&q=85" alt="Vestido elegante feminino"><div class="category-label"><h3>Elegância</h3><span>Para momentos especiais</span></div></a>
+        <a class="category" href="#novidades"><img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=850&q=85" alt="Look moderno feminino"><div class="category-label"><h3>Do seu jeito</h3><span>Personalidade em cada detalhe</span></div></a>
+      </div>
+    </section>
+
+    <section class="content products" id="novidades">
+      <div class="section-head"><div class="eyebrow">Escolhas da Donna</div><h2>Peças em destaque</h2><p>Uma seleção para inspirar seus próximos looks. Consulte disponibilidade e tamanhos pelo nosso atendimento.</p></div>
+      <div class="product-grid">
+        <article class="product-card"><div class="product-image"><span class="tag">Destaque</span><img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=650&q=85" alt="Calça feminina de alfaiataria"></div><div class="product-info"><h3>Calça de alfaiataria</h3><p>Elegância que acompanha você</p><div class="product-bottom"><span class="price">Consulte o valor</span><button class="add-btn">Tenho interesse</button></div></div></article>
+        <article class="product-card"><div class="product-image"><span class="tag">Queridinho</span><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=650&q=85" alt="Vestido feminino"></div><div class="product-info"><h3>Vestido especial</h3><p>Charme em todos os detalhes</p><div class="product-bottom"><span class="price">Consulte o valor</span><button class="add-btn">Tenho interesse</button></div></div></article>
+        <article class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=650&q=85" alt="Blusa feminina elegante"></div><div class="product-info"><h3>Blusa versátil</h3><p>Um toque especial no seu look</p><div class="product-bottom"><span class="price">Consulte o valor</span><button class="add-btn">Tenho interesse</button></div></div></article>
+        <article class="product-card"><div class="product-image"><span class="tag">Novidade</span><img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=650&q=85" alt="Conjunto feminino moderno"></div><div class="product-info"><h3>Look moderno</h3><p>Conforto com personalidade</p><div class="product-bottom"><span class="price">Consulte o valor</span><button class="add-btn">Tenho interesse</button></div></div></article>
+      </div>
+    </section>
+
+    <section class="content" id="sobre"><div class="about">
+      <div class="about-photo" role="img" aria-label="Mulheres escolhendo roupas em uma loja"></div>
+      <div><div class="eyebrow">Muito além da roupa</div><h2>Ser Donna é se sentir bem sendo você.</h2><p>A Donna Empoderada Boutique nasceu para celebrar a beleza de cada mulher. Acreditamos que a moda é uma forma de expressão: ela conta histórias, revela personalidade e fortalece a confiança.</p><p>Queremos fazer parte dos seus momentos, ajudando você a encontrar peças que combinem com sua essência.</p><a class="btn" href="#contato">Venha conhecer</a></div>
+    </div></section>
+
+    <section class="quote"><blockquote>“Quando você se sente bem com quem é, sua presença fala por você.”</blockquote><span>Donna Empoderada Boutique</span></section>
+
+    <section class="content contact" id="contato"><div class="section-head"><div class="eyebrow">Vamos conversar?</div><h2>Seu próximo look começa aqui.</h2><p>Fale com a Donna para conhecer as novidades, consultar tamanhos e tirar suas dúvidas.</p></div><a class="btn contact-btn" href="#" id="whatsappLink">Chamar no WhatsApp</a><div class="contact-details"><span>Instagram: <b>@seuinstagram</b></span><span>Atendimento: <b>consulte nossos horários</b></span></div></section>
+  </main>
+
+  <footer><div class="footer-inner"><div class="footer-brand">DONNA EMPODERADA<small>BOUTIQUE · MODA FEMININA</small></div><div class="footer-links"><a href="#inicio">Início</a><a href="#colecoes">Coleções</a><a href="#contato">Contato</a></div><div class="copyright">© <span id="year"></span> Donna Empoderada Boutique. Todos os direitos reservados.</div></div></footer>
+  <div class="cart-toast" id="toast" role="status" aria-live="polite">Interesse registrado! Fale com a gente para consultar essa peça.</div>
+
+  <script>
+    // Personalize os dados da loja antes de publicar:
+    const WHATSAPP_NUMBER = '5500000000000'; // Ex.: 55 + DDD + número, somente dígitos
+    const INSTAGRAM_HANDLE = '@seuinstagram';
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); menuToggle.textContent = '☰';
+    }));
+
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    document.querySelectorAll('.add-btn').forEach(button => button.addEventListener('click', () => {
+      const product = button.closest('.product-card').querySelector('h3').textContent;
+      toast.textContent = `Você se interessou por: ${product}. Chame a Donna para consultar!`;
+      toast.classList.add('show'); clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    }));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const whatsapp = document.getElementById('whatsappLink');
+    whatsapp.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Quero conhecer as peças da Donna Empoderada Boutique.')}`;
+    whatsapp.addEventListener('click', event => {
+      if (WHATSAPP_NUMBER === '5500000000000') {
+        event.preventDefault(); alert('Antes de publicar, coloque o número de WhatsApp da loja no código (variável WHATSAPP_NUMBER).');
+      }
+    });
+    document.querySelector('.contact-details b').textContent = INSTAGRAM_HANDLE;
+  </script>
+</body>
+</html>
